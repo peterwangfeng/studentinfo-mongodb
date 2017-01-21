@@ -1,0 +1,66 @@
+{{include 'share/header'}}
+
+<div class="container">
+    <button type="button" class="btn btn-success" onclick="location.href='/add'">
+        添加学生
+    </button>
+    <button type="button" class="btn btn-danger">
+        <span class="glyphicon glyphicon-search">
+        </span>
+        搜索
+    </button>
+</div>
+
+<div class="container table-responsive">
+    <table class="table table-bordered table-hover text-center">
+        <tr class="active">
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>联系方式</th>
+            <th>邮箱</th>
+            <th>修改</th>
+            <th>删除</th>
+        </tr>
+        {{each data as stu}}
+        <tr>
+            <td>{{stu.name}}</td>
+            <td>{{stu.age}}</td>
+            <td>{{stu.phone}}</td>
+            <td>{{stu.email}}</td>
+            <td>
+                <span class="glyphicon glyphicon-edit" onclick="location.href='/edit/{{stu.id}}'"></span>&#x3000;
+            </td>
+            <td>
+                <span class="glyphicon glyphicon-trash" data-id="{{stu.id}}" data-name="{{stu.name}}"></span>
+            </td>
+        </tr>
+        {{/each}}
+    </table>
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">确认要删除吗？</h4>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">确定</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="/js/jquery.min.js"></script>
+<script src="/bootstrap/js/bootstrap.min.js"></script>
+<script src="/scripts/index.js"></script>
+
+
+
+{{include 'share/footer'}}

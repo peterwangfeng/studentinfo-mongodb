@@ -1,0 +1,22 @@
+body{
+    padding-top: 50px;
+}
+header{
+    background-color: #eee;
+    height: 6rem;
+    margin-bottom: 15px;
+}
+h1{
+    font-size: 2.2rem;
+}
+.toolbar{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+th{
+    text-align: center;
+}
+td span{
+    cursor: pointer;
+}
+
