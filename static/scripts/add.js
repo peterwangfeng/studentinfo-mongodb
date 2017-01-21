@@ -3,7 +3,7 @@
  */
 $('form').submit(function (ev) {
     ev.preventDefault();
-    var data = $(this).serialize();
+    let data = $(this).serialize();
     console.log(data + '111');
     $.post('/add', data, (res)=> {
         //console.log(res);

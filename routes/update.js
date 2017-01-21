@@ -25,6 +25,7 @@ router.post('/api/edit/:id',(req,res)=>{
     Student.findByIdAndUpdate(id,req.body,function(err){
         if(err){
             //跳转到错误页
+            res.redirect('/404.html');
         }else{
             //回到主页
             res.redirect('/')
